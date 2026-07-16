@@ -6,8 +6,8 @@ This project turns raw transactional sales data into clear, decision-ready insig
 
 This structure makes it possible to answer real business questions quickly, such as:
 - What's selling and what isn't?
-- Who your most loyal customers are?
-- When your busiest hours and days are?
+- Who is your most loyal customers are?
+- When is your busiest hours and days are?
 - Which locations are having a good market, and which need attention?
 - How your revenue really is, beyond just a single "total sales" number?
 
@@ -26,18 +26,32 @@ Rather than putting every piece of information into one big spreadsheet, the dat
 
 
 
--- Describe what you want to uncover
+-- What to uncover
+ # Performance of good and the Revenue
+- Which products bring in the most money, and which are underperforming?
+- Which product categories contribute the biggest share of total revenue?
+- Which year, month, or week had our strongest sales?
 
+## Marketing
+By knowing the one-time customers and the quiet days with low or no sales, this will help to know when marketing campaigns can be timed and targeted
 
-## Results
+### Payment Behavior
+- How do customers prefer to pay?
+- Does the most-used payment method also bring in the most revenue, or are they different?
 
+####  Customer Loyalty
+- Who are our one-time shoppers, our occasional repeat buyers, and our loyal regulars?
+- This "customer type" segmentation — Single, Twice, Retainer, or Zero (never purchased) — is designed specifically to support  targeted marketing: a first-time buyer needs a different message than a loyal regular.
 
+##### Timing & Operations
+- What time of day are we busiest? (Useful for staffing and system load planning.)
+- Which day of the week brings the most revenue?
+- Which day is our quietest — a natural target for a marketing push to fill the gap?
 
-This project is meant as a learning/portfolio piece showing core relational database skills:
-
-Designing normalized tables with primary/foreign keys
-Enforcing data integrity with constraints (CHECK, NOT NULL, UNIQUE)
-Writing multi-table JOIN queries
-Using aggregate functions (SUM, COUNT, AVG) with GROUP BY / HAVING
-Running everything through pgAdmin's Query Tool
-
+### Results
+Once the analysis is run on the e-commerce transaction data, it provides useful insights such as:
+- Top-selling products – identifies which products sell the most and generate the highest revenue.
+- Sales trends over time – shows how sales change by year, quarter, month, or week, helping identify growth patterns and seasonal trends.
+- Store performance – compares sales across different districts to identify the best-performing locations.
+- Customer purchasing habits – shows how many customers make repeat purchases compared to those who buy only once.
+- Payment method preferences – reveals which payment methods customers use most often, helping the business understand customer preferences.
