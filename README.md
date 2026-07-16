@@ -13,9 +13,18 @@ This structure makes it possible to answer real business questions quickly, such
 
 -- Describe the data 
 This project transforms raw e-commerce transaction data into a structured database. The data is organized into clearly defined categories, each representing a different aspect of the business and answering specific information needs.
-ather than dumping every piece of information into one giant spreadsheet, the data is split into clearly defined categories — each one answering a different question:
 
-TableWhat it answers🧾 Transactions (Fact Table)"What actually happened?" — every individual sale: quantity, price, and links to everything else below👤 Customers"Who bought it?" — customer names and contact details📦 Products"What was bought?" — product names, prices, suppliers, countries of origin🏬 Stores"Where was it bought?" — division, district, and local area of each store🕒 Time"When was it bought?" — the exact date, hour, day, week, month, quarter, and year💳 Payments"How was it paid for?" — cash, card, mobile payment, etc., and which bank was involved
+Rather than putting every piece of information into one big spreadsheet, the data is split into clearly defined categories — each one answering a different question:
+| Table | What it answers |
+|-------|------------------|
+|  Transactions (Fact Table) | **What actually happened?** — Every individual sale, including quantity, price, and links to all related dimensions. |
+| Customers | **Who bought it?** — Customer names and contact details. |
+| Products | **What was bought?** — Product names, prices, suppliers, and countries of origin. |
+| Stores | **Where was it bought?** — Division, district, and local area of each store. |
+| Time | **When was it bought?** — The exact date, hour, day, week, month, quarter, and year. |
+| Payments | **How was it paid for?** — Payment method (cash, card, mobile payment, etc.) and the bank involved. |
+
+
 
 -- Describe what you want to uncover
 
