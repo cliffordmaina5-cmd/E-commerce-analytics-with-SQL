@@ -1,9 +1,8 @@
 # E commerce analytics
-A PostgreSQL data warehouse project analyzing customer purchases, product performance, store activity, and payment trends using a star schema design.
+A PostgreSQL project analyzing customer purchases, product performance, store activity, and payment trends using a star schema design.
 
 ## Overview
-This project turns raw transactional sales data into clear, decision-ready insights. Instead of storing everything in one giant table, the data is organized around a star schema — a central table of sales transactions surrounded by descriptive tables for customers, products, stores, time, and payments.
-
+This project turns raw transactional sales data into clear, decision-ready insights. Instead of storing everything in one big table.
 This structure makes it possible to answer real business questions quickly, such as:
 - What's selling and what isn't?
 - Who is your most loyal customers are?
@@ -12,6 +11,7 @@ This structure makes it possible to answer real business questions quickly, such
 - How your revenue really is, beyond just a single "total sales" number?
 
 -- Describe the data 
+
 This project transforms raw e-commerce transaction data into a structured database. The data is organized into clearly defined categories, each representing a different aspect of the business and answering specific information needs.
 
 Rather than putting every piece of information into one big spreadsheet, the data is split into clearly defined categories — each one answering a different question:
@@ -32,18 +32,18 @@ Rather than putting every piece of information into one big spreadsheet, the dat
 - Which product categories contribute the biggest share of total revenue?
 - Which year, month, or week had our strongest sales?
 
-## Marketing
+# Marketing
 By knowing the one-time customers and the quiet days with low or no sales, this will help to know when marketing campaigns can be timed and targeted
 
-### Payment Behavior
+# Payment Behavior
 - How do customers prefer to pay?
 - Does the most-used payment method also bring in the most revenue, or are they different?
 
-####  Customer Loyalty
+# Customer Loyalty
 - Who are our one-time shoppers, our occasional repeat buyers, and our loyal regulars?
 - This "customer type" segmentation — Single, Twice, Retainer, or Zero (never purchased) — is designed specifically to support  targeted marketing: a first-time buyer needs a different message than a loyal regular.
 
-##### Timing & Operations
+# Timing & Operations
 - What time of day are we busiest? (Useful for staffing and system load planning.)
 - Which day of the week brings the most revenue?
 - Which day is our quietest — a natural target for a marketing push to fill the gap?

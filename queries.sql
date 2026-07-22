@@ -165,4 +165,34 @@ GROUP BY i.item_key, i.item_name
 ORDER BY total_revenue ASC
 LIMIT 5;
 
+-- Determine the sales revenue percentage contributed by each product category
+WITH category_revenue AS (
+    SELECT 
+        COALESCE(i.description, 'Uncategorized') AS category,
+        SUM(f.total_price) AS category_total
+    FROM fact_table f
+    INNER JOIN item_dim i ON f.item_key = i.item_key
+    GROUP BY COALESCE(i.description, 'Uncategorized')
+)
+SELECT 
+    category,
+    category_total,
+    ROUND(100.0 * category_total / SUM(category_total) OVER (), 2) AS pct_of_total_revenue
+FROM category_revenue
+ORDER BY pct_of_total_revenue DESC;
+
 -- In a marketing campaign, we want to create a feature/column called customer type, we want to create this column by grouping customers by their repeat transaction. If a customer has transacted only once, we will create a category called "Twice" and if they have transacted more than three times, we will create a category called "Retainer". Customers who have zero transactions will have the category called "Zero".
+SELECT 
+    c.coustomer_key,
+    c.name,
+    COALESCE(COUNT(f.payment_key), 0) AS transaction_count,
+    CASE 
+        WHEN COALESCE(COUNT(f.payment_key), 0) = 0 THEN 'Zero'
+        WHEN COALESCE(COUNT(f.payment_key), 0) = 1 THEN 'Single'
+        WHEN COALESCE(COUNT(f.payment_key), 0) = 2 THEN 'Twice'
+        ELSE 'Retainer'
+    END AS customer_type
+FROM customer_dim c
+LEFT JOIN fact_table f ON c.coustomer_key = f.coustomer_key
+GROUP BY c.coustomer_key, c.name
+ORDER BY transaction_count DESC;
